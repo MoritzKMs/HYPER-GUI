@@ -61,6 +61,8 @@ Optional `menu.cs2Icon` and `menu.steamAvatar` texture IDs are owned by the host
 
 For CMake integration, set `HYPER_BUILD_DEMO=OFF` and `HYPER_IMGUI_DIR` to your Dear ImGui directory, then use `add_subdirectory` and link `hyper_gui` alongside your existing ImGui target. For a DLL-based project, compile the component into the host and call it from the normal render loop with the correct ImGui context. Compiler settings, runtime and ImGui configuration must match the host.
 
+You can hide the menu by making the 'Render()' call conditional.
+
 ### Tests
 
 ```powershell
@@ -128,6 +130,8 @@ ImGui::Render();
 İsteğe bağlı `menu.cs2Icon` ve `menu.steamAvatar` doku kimliklerinin sahibi ana uygulamadır. Görünen adı `menu.steamName` alanına atayın. Windows demosundaki `demo/steam_profile.hpp`, WIC ve DirectX 11 kullanarak bu alanları otomatik doldurur. Farklı bir çizicide doku yüklemesini ana uygulama sağlamalıdır.
 
 CMake ile eklemek için `HYPER_BUILD_DEMO=OFF` yapın, `HYPER_IMGUI_DIR` değerini kendi Dear ImGui klasörünüze ayarlayın; ardından `add_subdirectory` kullanıp `hyper_gui` ve mevcut ImGui hedefinizi bağlayın. DLL tabanlı bir projede bileşeni ana projeyle birlikte derleyin ve doğru ImGui bağlamıyla normal çizim döngüsünden çağırın. Derleyici ayarları, çalışma zamanı ve ImGui yapılandırması ana projeyle eşleşmelidir.
+
+'Render()' çağrısını koşula bağlayarak menüyü gizleyebilirsin
 
 ### Testler
 
